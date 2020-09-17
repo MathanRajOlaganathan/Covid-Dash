@@ -1,6 +1,8 @@
 # Covid-Dashboard
-A dashboard to track the  covid cases
-## Requirements
+A dashboard to track the  covid cases.
+I have used Travis CI for Continuous Integration and Continuous Deployment (CI/CD) of a SpringBoot application.
+
+## Tech Stack
 
 1. Java - 1.11
 
@@ -13,6 +15,14 @@ A dashboard to track the  covid cases
 5. Thymeleaf
 
 6. Jquery, Charts.js
+
+## Requirements
+
+* GitHub for code repository
+
+* Docker Hub for publishing Docker images
+
+* Heroku for deploying the application
 
 ## Steps to Setup
 
@@ -47,33 +57,46 @@ docker run  -d -p 8080:8080  covid-ci-cd-process
 
 The server will start at <http://localhost:8080>.
 
+Running on Heroku https://covid19-dash-ci.herokuapp.com/
+
+[![Build Status](https://travis-ci.com/MathanRajOlaganathan/Covid-Dash.svg?branch=master)](https://travis-ci.com/github/MathanRajOlaganathan/Covid-Dash)
+
+I have used Travis CI for this project to do all the usual tasks such as:
+
+* Checkout the latest code
+* Compile and run Junit and Integration Tests
+* Run JaCoCo code coverage and fail the build if desired percentage is not met
+* Built Docker image and publish it to Docker Hub
+* Deploy application on Heroku 
+
+
 ## Web APP Screenshots
 
 **1.Login Screen**
 
 
-![login](https://github.com/MathanRajOlaganathan/Covid-Dashboard/blob/master/src/main/resources/static/images/covid.jpg?raw=true)
+![login](https://github.com/MathanRajOlaganathan/Covid-Dash/blob/master/src/main/resources/static/images/login.jpg?raw=true)
 
 
 **2.Register Screen**
 
 
-![register](https://github.com/MathanRajOlaganathan/Covid-Dashboard/blob/master/src/main/resources/static/images/covid.jpg?raw=true)
+![register](https://github.com/MathanRajOlaganathan/Covid-Dash/blob/master/src/main/resources/static/images/Register.jpg?raw=true)
 
 
 **3.Dashboard**
 
 
-![dashboard](https://github.com/MathanRajOlaganathan/Covid-Dashboard/blob/master/src/main/resources/static/images/covid.jpg?raw=true)
+![dashboard](https://github.com/MathanRajOlaganathan/Covid-Dash/blob/master/src/main/resources/static/images/Dash.jpg?raw=true)
 
 
 **4.Charts**
 
-![chart](https://github.com/MathanRajOlaganathan/Covid-Dashboard/blob/master/src/main/resources/static/images/covid.jpg?raw=true)
+![chart](https://github.com/MathanRajOlaganathan/Covid-Dash/blob/master/src/main/resources/static/images/Charts.jpg?raw=true)
 
 **5.Symptoms**
 
-![chart](https://github.com/MathanRajOlaganathan/Covid-Dashboard/blob/master/src/main/resources/static/images/covid.jpg?raw=true)
+![chart](https://github.com/MathanRajOlaganathan/Covid-Dash/blob/master/src/main/resources/static/images/Symptom.jpg?raw=true)
 
 
 
