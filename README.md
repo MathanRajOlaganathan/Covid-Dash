@@ -1,6 +1,5 @@
 # Covid-Dashboard
-A dashboard to track the  covid cases.
-I have used Travis CI for Continuous Integration and Continuous Deployment (CI/CD) of a SpringBoot application.
+A dashboard to track the  covid cases using Spring Boot and Java11 and I have used Travis CI for Continuous Integration and Continuous Deployment (CI/CD).
 
 ## Tech Stack
 
@@ -21,6 +20,8 @@ I have used Travis CI for Continuous Integration and Continuous Deployment (CI/C
 * GitHub for code repository
 
 * Docker Hub for publishing Docker images
+
+* Travis CI for CI/CD
 
 * Heroku for deploying the application
 
@@ -75,7 +76,7 @@ I have used Travis CI for this project to do all the usual tasks such as:
 **1.Login Screen**
 
 
-![login](https://github.com/MathanRajOlaganathan/Covid-Dash/blob/master/src/main/resources/static/images/login.jpg?raw=true)
+![login](https://github.com/MathanRajOlaganathan/Covid-Dash/blob/master/src/main/resources/static/images/Login.jpg?raw=true)
 
 
 **2.Register Screen**
