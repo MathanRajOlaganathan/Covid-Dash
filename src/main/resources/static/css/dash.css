@@ -1,0 +1,138 @@
+body {
+    font-family: "sen", sans-serif !important;
+    overflow-x: hidden;
+    background-color: #2a2b3d;
+    width: 100%;
+  }
+
+  .welcome {
+    color: #CCC;
+  }
+  .welcome .content {
+    background-color: #313348;
+    padding: 15px;
+    margin-top: 25px;
+  }
+   .welcome h2 {
+    font-family: Calibri;
+    font-weight: 100;
+    margin-top: 0
+  }
+  .welcome p {
+    color: #999;
+  }  
+
+  .statics {
+    color: #EEE;
+    margin-top: 15px;
+  }
+  .statics .box {
+    position: relative;
+    padding: 15px;
+    overflow: hidden;
+    border-radius: 3px;
+    margin-bottom: 25px;
+  }
+  .statics .box h3:after {
+    content: "";
+    height: 2px;
+    width: 70%;
+    margin: auto;
+    background-color: rgba(255, 255, 255, 0.12);
+    display: block;
+    margin-top: 10px;
+  }
+  .statics .box i {
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    font-size: 22px;
+    padding: 15px;
+    top: -25px;
+    left: -25px;
+    background-color: rgba(255, 255, 255, 0.15);
+    line-height: 60px;
+    text-align: right;
+    border-radius: 50%;
+  }
+  
+
+  .case-switch .highlight{
+    opacity: 1;
+    background: rgba(0, 123, 255, 0.125);
+    transform: translateX(136px);
+
+  }
+
+
+  .covid-table{
+    color: #EEE;
+    /* background-color: #313348; */
+    /* padding: 1px;
+    margin-top: 1px; */
+  }
+  .footer-sect  .copyright{
+    color: #EEE;
+    /* background-color:white; */
+    
+  }
+
+  /* ============================================= */
+  /* ============  PRECAUTION BAR   ============== */
+  /* ============================================= */
+  
+  #precautionStyle {
+    background-color: #ff0000;
+  }
+   .precautionFlex {
+    color: white;
+    display: flex;
+    justify-content: center;
+  }
+  .changeContent {
+    padding: 12px 0px;
+  }
+  
+  .changeContent:after {
+    content: "";
+    /* Enter Precaution Bar Total Duration  */
+    animation: flow 21s infinite linear;
+    font-size: 1rem;
+  } 
+  
+  /* Enter Your Precautions Here */
+  @keyframes flow {
+    0%,
+    100% {
+      content: "Take care if you are elderly ";
+    }
+    10% {
+      content: "Avoid Exposure: Stay at home. Wash hands or use alchohol-based rub. Avoid touching your face. 🙏";
+    }
+    20% {
+      content: "Do NOT ❌ forward a message until you verify the content it contains.";
+    }
+    30% {
+      content: "Plan and calculate your essential needs for the next three weeks and get only what is bare minimum needed.  ";
+    }
+    40% {
+      content: "Stay Healthy: Eat nutritious food, exercise regularly. Stay connected with friends and family.! Help everyone during this crisis ❤️  ";
+    }
+    50% {
+      content: "If you have symptoms and suspect you have coronavirus - reach out to your doctor or call state helplines.  ";
+    }
+    60% {
+      content: "Be prepared: Keep a supply of essential medicines. Keep all helpline numbers handy";
+    }
+    70% {
+      content: "Plan ahead! Take a minute and check how much you have at home. Planning ahead let's you buy exactly what you need!  ";
+    }
+    80% {
+      content: "For any COVID 19 related queries, call your State Helpline/Ministry of Health & Family Welfare's 24X7 helpline at  📞 1075 or 011-23978046.";
+    }
+    90% {
+      content: "Lets fight this together 💪";
+    }
+  }
+
+ 

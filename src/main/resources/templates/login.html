@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head >
+    <link rel = "icon" href = "/icons/corona-icon-red.png"
+    type = "image/x-icon">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet"  href="/css/login.css">
+<title>Login</title>
+</head>
+<body>
+<div class="container  mt-5  py-5">
+<div class="card mx-auto bg-light " style="width: 25rem;">
+<article class="card-body mx-auto" style="max-width: 400px;">
+	<h4 class="card-title mt-3 text-center">Login Account</h4>
+    <p class="text-center">Log in with your email and password</p>
+    <br>
+	<form id="loginForm" class="needs-validation" autocomplete="off" th:action="@{/login}" method="post"
+          th:object="${login}">
+        <div th:if="${confirmationMessage}" class="alert alert-success alert-dismissible fade show"
+             role="alert" th:text=${confirmationMessage}>
+        </div>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert" th:if="${param.error}">
+            The username or password is incorrect!
+        </div>
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+		    <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+		 </div>
+        <input th:field="*{username}" name="username" class="form-control" placeholder="Email Address" type="email">
+    </div> <!-- form-group// -->
+    <div class="form-group input-group">
+    	<div class="input-group-prepend">
+            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+		</div>
+        <input th:field="*{password}" type="password" placeholder="Password" name="password" id="password" class="form-control" data-toggle="password">
+    <div class="input-group-append">
+    <span class="input-group-text">
+      <i class="fa fa-eye"></i>
+    </span>
+    </div>
+    </div>
+    <br>
+    <br>
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary btn-block"> Log In  </button>
+    </div> <!-- form-group// --> 
+    <p class="text-center">Don't have an account? <a th:href="@{/register}">Create Account</a> </p>
+   
+</form>
+</article>
+</div> <!-- card.// -->
+</div> 
+<!--container end.//-->
+<!-- Copyright -->
+<div class="footer">
+    <div class="footer-lower ">
+        <div class="copyright">
+            <span class="copyright">© 2020 Copyright:</span>
+       <a href="https://www.linkedin.com/in/mathanrajo"> Mathan Raj O</a>
+</div>
+    </div>
+</div>
+<!--Scripts-->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="/js/showPassword.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19</title>
+
+    <link rel = "icon" href = "/icons/corona-icon-red.png"
+          type = "image/x-icon">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- data-tables -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/dash.css">
+    <link rel="stylesheet" href="/css/chart.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Covid-19</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav ml-auto" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <!--                    <a class="nav-link" href="/dash.html">-->
+                <a class="nav-link" th:href="@{/dash}">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                <!--                    <a class="nav-link" href="/chart.html">-->
+                <a class="nav-link" th:href="@{/chart}">
+                    <i class="fa fa-fw fa-area-chart"></i>
+                    <span class="nav-link-text">Charts</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                <!--                    <a class="nav-link" href="tables.html">-->
+                <a class="nav-link" th:href="@{/symptom}">
+                    <i class="fa fa-fw fa-table"></i>
+                    <span class="nav-link-text">Symptoms</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a th:href="@{/logout}" class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--/.Navbar -->
+    <section class="charts">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <h3 class="lead text-center">Top 10 States based on Confirmed Cases</h3>
+                        <canvas id="bar-chart" width="800" height="450"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <h3 class="lead text-center">States with fewer deaths and their active cases</h3>
+                        <canvas id="pie-chart" width="800" height="450"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="row my-5">
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <h3 class="lead text-center">Top 5 States based on Recovery Rate</h3>
+                        <canvas id="bar-chart-horizontal" width="800" height="450"></canvas>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="chart-container">
+                        <h3 class="lead text-center">Daily Summary of Confirmed Cases</h3>
+                        <canvas id="line-chart" width="800" height="450"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
+<!-- Copyright -->
+<div class="footer footer-sect my-3">
+    <div class="footer-lower text-center py-3">
+        <div class="copyright">
+            <span class="copyright">© 2020 Copyright:</span>
+            <a href="https://www.linkedin.com/in/mathanrajo"> Mathan Raj O</a>
+        </div>
+    </div>
+</div>
+<!--Javasript-->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+     
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<!--<script src="/js/chart.js"></script>-->
+    <script th:inline="javascript">
+        /*<![CDATA[*/
+        var htmldata = [[${barChart}]];
+        var chart = document.getElementById('bar-chart');
+        Chart.defaults.global.animation.duration = 2000; // Animation duration
+        Chart.defaults.global.title.display = false; // Remove title
+        Chart.defaults.global.title.text = "Chart"; // Title
+        Chart.defaults.global.title.position = 'bottom'; // Title position
+        Chart.defaults.global.defaultFontColor = '#999'; // Font color
+        Chart.defaults.global.defaultFontSize = 10; // Font size for every label
+
+        // Chart.defaults.global.tooltips.backgroundColor = '#FFF'; // Tooltips background color
+        Chart.defaults.global.tooltips.borderColor = 'white'; // Tooltips border color
+        Chart.defaults.global.legend.labels.padding = 0;
+        Chart.defaults.scale.ticks.beginAtZero = true;
+        Chart.defaults.scale.gridLines.zeroLineColor = 'rgba(255, 255, 255, 0.1)';
+        Chart.defaults.scale.gridLines.color = 'rgba(255, 255, 255, 0.02)';
+        Chart.defaults.global.legend.display = false;
+        new Chart(chart, {
+            type: 'bar',
+            data: {
+                labels: Object.keys(htmldata),
+                datasets: [
+                    {
+                        label: "",
+                        backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850", "#0000FF"
+                            ,"#DC143C","#556B2F","#FF69B4","#4682B4"],
+                        borderWidth: 2,
+                        showLine: true,
+                        data: Object.keys(htmldata).map(function(key) {return htmldata[key];}),
+                    }
+                ]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Bar-Chart'
+                }
+            }
+        });
+
+        //  Pie Chart
+        var pieData = [[${pieChart}]]
+        new Chart(document.getElementById("pie-chart"), {
+            type: 'pie',
+            data: {
+                labels: Object.keys(pieData),
+                datasets: [{
+                    label: "StateWise Active Cases",
+                    backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850",
+                    "#FA8072","#7CFC00","#87CEFA","#DA70D6","#800000"],
+                    data: Object.keys(pieData).map(function(key) {return pieData[key];}),
+                }]
+            },
+            options: {
+                legend: { display: true },
+                title: {
+                    display: true,
+                    text: 'Pie-Chart'
+                }
+            }
+        });
+
+        // Horizontal Bar Chart
+        var horData = [[${horChart}]]
+        new Chart(document.getElementById("bar-chart-horizontal"), {
+            type: 'horizontalBar',
+            data: {
+                labels: Object.keys(horData),
+                datasets: [
+                    {
+                        label: "Recovered Cases",
+                        backgroundColor: ["#D2B48C", "#EE82EE","#9ACD32","#FFA07A","#FFD700"],
+                        data: Object.keys(horData).map(function(key) {return horData[key];}),
+                    }
+                ]
+            },
+            options: {
+                legend: { display: false },
+                title: {
+                    display: true,
+                    text: 'Hor-Bar-Chart'
+                }
+            }
+        });
+        // LineChart
+        var lineData = [[${lineChart}]]
+        new Chart(document.getElementById("line-chart"), {
+            type: 'line',
+            data: {
+                labels: Object.keys(lineData),
+                datasets: [{
+                    data: Object.keys(lineData).map(function(key) {return lineData[key];}),
+                    label: "",
+                    borderColor: "#3e95cd",
+                    fill: false
+                },
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'lineChart'
+                }
+            }
+        });
+        /*]]>*/
+    </script>
+
+</body>
+
+</html>

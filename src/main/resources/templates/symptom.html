@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid-19</title>
+
+    <link rel = "icon" href = "/icons/corona-icon-red.png"
+          type = "image/x-icon">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- data-tables -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/dash.css">
+    <link rel="stylesheet" href="/css/chart.css">
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Covid-19</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav navbar-sidenav ml-auto" id="exampleAccordion">
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" th:href="@{/dash}">
+                    <i class="fa fa-fw fa-dashboard"></i>
+                    <span class="nav-link-text">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                <a class="nav-link" th:href="@{/chart}">
+                    <i class="fa fa-fw fa-area-chart"></i>
+                    <span class="nav-link-text">Charts</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                <a class="nav-link" th:href="@{/symptom}">
+                    <i class="fa fa-fw fa-table"></i>
+                    <span class="nav-link-text">Symptoms</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto" id="exampleAccordion">
+            <li class="nav-item">
+                <a th:href="@{/logout}" class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                    <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!--/.Navbar -->
+  <!--  == Start Main Content Wrapper == -->
+   <div class="container">
+    <div class="row imgFlexing">
+      <div class="col-sm-6 cageimg giveMargin defineImgBoxLeft">
+        <div class="infoBox autoImg my-2">
+            <div class="row">
+            <div class="col-sm-3"><img alt="Fever" src="https://www.gstatic.com/healthricherkp/covidsymptoms/light_fever.gif"
+             height="55px" width="55px" data-atf="1"></div>
+             <div class="col-sm-3"><img alt="Dry cough" src="https://www.gstatic.com/healthricherkp/covidsymptoms/light_cough.gif" height="55px" width="55px" data-atf="1">
+             </div>
+                <div class="Eq0l7e"><img alt="Tiredness" src="https://www.gstatic.com/healthricherkp/covidsymptoms/light_tiredness.gif" height="55px" width="55px" data-atf="1"></div>
+        </div>
+            <img
+            src="https://www.mygov.in/sites/all/themes/mygov/images/covid/symptoms.png"
+            alt=""
+            title=""
+          />
+        </div>
+      </div>
+      <div class="col-sm-6 cageimg giveMargin defineImgBoxRight">
+        <div class="infoBox autoImg boxTextColor">
+          <h3 class="my-4 text-center">Causes</h3>
+          <img
+            src="https://www.mygov.in/sites/all/themes/mygov/images/covid/block-one.png"
+            alt=""
+            title=""
+          />
+          <h3 class="text-center">Preventions</h3>
+          <img
+            src="https://www.mygov.in/sites/all/themes/mygov/images/covid/block-two.png"
+            alt=""
+            title=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+    <!--== End Main Content Wrapper ==-->
+<!-- Copyright -->
+<div class="footer footer-sect my-3">
+    <div class="footer-lower text-center py-5">
+        <div class="copyright">
+            <span class="copyright">© 2020 Copyright:</span>
+            <a href="https://www.linkedin.com/in/mathanrajo"> Mathan Raj O</a>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</body>
+</html>
