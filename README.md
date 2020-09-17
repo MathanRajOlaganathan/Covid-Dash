@@ -64,11 +64,11 @@ Running on Heroku https://covid19-dash-ci.herokuapp.com/
 
 I have used Travis CI for this project to do all the usual tasks such as:
 
-* Checkout the latest code
-* Compile and run Junit and Integration Tests
-* Run JaCoCo code coverage and fail the build if desired percentage is not met
-* Built Docker image and publish it to Docker Hub
-* Deploy application on Heroku 
+* Checkout the latest code.
+* Compile and run Junit and Integration Tests.
+* Run JaCoCo code coverage.
+* Built Docker image and publish it to Docker Hub.
+* Deploy application on Heroku.
 
 
 ## Web APP Screenshots
